@@ -228,9 +228,10 @@ def get_item_by_id_dfs_iterative(
 
                     for task in lab.tasks:
                         counter += 1
-                        if lab.id == item_id:
+                        if task.id == item_id:
                             return FoundItem(task, counter)
-
+#I fixed it
+#And then broke
                         for step in task.steps:
                             counter += 1
                             if step.id == item_id:
@@ -245,6 +246,11 @@ def get_item_by_id_dfs_iterative(
 #
 # ===
 
+def notUse():
+    return 0
+
+def use():
+    return 1
 
 def get_item_by_id_dfs_recursive[T: Item](
     items: List[T], item_id: str, order: Order
